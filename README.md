@@ -1,5 +1,5 @@
-# DjanoInvestigation-TeoRamosRuano
-
+# Djano Investigation-TeoRamosRuano
+-------------------------------------------------------------------------------------------
 # Investigación y Desarrollo de un CRUD con Django
 
 ## Parte 1: Aplicación CRUD y Django
