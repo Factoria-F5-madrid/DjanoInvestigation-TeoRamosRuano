@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="text-center">
+    <h1 class="text-3xl font-bold mb-6 text-white">Library Books</h1>
+
+    <!-- Button to add a new book -->
+    <a href="{% url 'book_create' %}" class="bg-green-700 text-white px-4 py-2 rounded hover:bg-green-600">Add New Book</a>
+
+    <!-- List of books -->
+    <ul class="mt-6 space-y-4">
+      {% for book in books %}
+        <li class="bg-gray-800 p-4 rounded-lg text-white shadow-md">
+          <!-- Link to the book's detail page using its ID -->
+          <a href="{% url 'book_detail' book.id %}" class="text-teal-300 text-xl font-semibold hover:underline">
+            {{ book.title }}
+          </a>
+
+          <!-- Edit and Delete buttons for each book -->
+          <div class="mt-2">
+            <a href="{% url 'book_edit' book.id %}" class="text-yellow-400 hover:text-yellow-300 mr-4">Edit</a>
+            <a href="{% url 'book_delete' book.id %}" class="text-red-400 hover:text-red-300">Delete</a>
+          </div>
+        </li>
+      {% empty %}
+        <!-- Message if no books are available -->
+        <li class="text-gray-400">No books found.</li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock %}
